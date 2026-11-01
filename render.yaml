@@ -1,0 +1,23 @@
+# Render Blueprint: one free Node web service.
+# MONGODB_URI and GROQ_API_KEY are secrets: Render asks for them when you create the Blueprint.
+services:
+  - type: web
+    name: drift-challenge
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PLANS_PER_DAY
+        value: "5"
