@@ -1,0 +1,24 @@
+{
+  "name": "drift-challenge",
+  "version": "1.0.0",
+  "description": "Turn 30/60/90-day goals into a daily plan with AI, then track progress and see how missed days push your goals back.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.4",
+    "zod": "^4.6.7"
+  }
+}
